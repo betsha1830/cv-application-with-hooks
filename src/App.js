@@ -11,10 +11,11 @@ function App() {
                                       work_end_date: "Ending Date"}})
   const [personalInfo, setPersonalInfo] = useState({})
   const [workInfo, setWorkInfo] = useState({})
+  const [educationInfo, setEducationInfo] = useState({})
 
   return (
     <div className="App">
-      <PersonalInfo personalLabel={label.personal_info_label}/>
+      <PersonalInfo personalLabel={label.personal_info_label} personalValue={personalInfo}/>
     </div>
   );
 }
