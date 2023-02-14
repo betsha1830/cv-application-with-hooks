@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <PersonalInfo />
+      <PersonalInfo personalLabel={label.personal_info_label}/>
     </div>
   );
 }
