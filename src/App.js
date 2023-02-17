@@ -13,13 +13,17 @@ function App() {
   const [workInfo, setWorkInfo] = useState({})
   const [educationInfo, setEducationInfo] = useState({})
 
-  const addPesronalInfo = (data) => {
+  const addPesronalInfo = (data) => { 
     setPersonalInfo({...data})
   }
 
   return (
     <div className="App">
-      <PersonalInfo personalLabel={label.personal_info_label} personalValue={personalInfo} passSetPersonalInfo={setPersonalInfo} personalHandler={addPesronalInfo}/>
+      <PersonalInfo personalLabel={label.personal_info_label} 
+      personalValue={personalInfo} 
+      passSetPersonalInfo={setPersonalInfo} 
+      personalHandler={addPesronalInfo}/>
+      <h1>{JSON.stringify(personalInfo)}</h1>
     </div>
   );
 }

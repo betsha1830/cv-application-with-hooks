@@ -4,8 +4,28 @@ function PersonalInfo (props) {
 
   const [personal, setPersonal] = useState({...props.personalLabel})
 
+  function disableField (value=false) {
+    Object.keys(props.personalLabel).forEach(item => {
+      document.getElementById(item).disabled = value
+    })
+  }
+
   const passPersonalInfo = () => {
-    props.personalHandler(personal)
+    if(document.getElementById('add-personal-info').innerText === 'Submit') {
+      props.personalHandler(personal)
+      document.getElementById('add-personal-info').innerText = 'Edit'
+      disableField(true)
+    }
+    else if(document.getElementById('add-personal-info').innerText === 'Edit') {
+      document.getElementById('add-personal-info').innerText = 'Done'
+      disableField(false)
+    }
+    else {
+      props.personalHandler(personal)
+      document.getElementById('add-personal-info').innerText = 'Edit'
+     disableField(true)
+    }
+    
   }
   
   const updatePersonalInfo = (e) => {
@@ -22,7 +42,7 @@ function PersonalInfo (props) {
           </div>
         )
       })}
-      <button className="add-personal-info" onClick={passPersonalInfo}>Submit</button>
+      <button id="add-personal-info" onClick={passPersonalInfo}>Submit</button>
     </div>
   )
 }
