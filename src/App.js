@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import EducationInfo from './Components/EducationInfo';
+import Output from './Components/Output';
 import PersonalInfo from './Components/PersonalInfo';
 import WorkInfo from './Components/WorkInfo';
 
@@ -27,6 +28,13 @@ function App() {
     setWorkInfo(workInfo.concat(data))
   }
 
+  const editEducationInfo = (data) => {
+    let pos = 0
+    setEducationInfo({
+      [educationInfo[pos]]: data
+    })
+  }
+
   return (
     <div className="App">
       <PersonalInfo personalLabel={label.personal_info_label} 
@@ -35,9 +43,12 @@ function App() {
       personalHandler={addPesronalInfo}/>
       <EducationInfo educationLabel={label.education_info_label} educationValue={educationInfo} educationHandler={addEducationInfo}/>
       <WorkInfo workLabel={label.work_info_label} workValue={workInfo} workHandler={addWorkInfo}/>
-      <h1>{JSON.stringify(educationInfo)}</h1>
-      <h1>{JSON.stringify(personalInfo)}</h1>
-      <h1>{JSON.stringify(workInfo)}</h1>
+
+      <Output type='personal-info' value={personalInfo} label={label.personal_info_label} />
+      <Output type='education-info' value={educationInfo} label={label.education_info_label} />
+      <h1>{JSON.stringify(educationInfo)}</h1> 
+      {/* <h1>{JSON.stringify(personalInfo)}</h1>
+      <h1>{JSON.stringify(workInfo)}</h1> */}
     </div>
   );
 }

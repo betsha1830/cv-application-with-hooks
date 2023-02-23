@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import PersonalInfo from './PersonalInfo'
+import EditIcon from "../edit.png"
+import DeleteIcon from "../trash.png"
 
 function EducationInfo(props) {
 
@@ -31,6 +32,7 @@ function EducationInfo(props) {
 
   return (
     <div className='education-info'>
+      {/* <div><h1 className='heading'>Education Information <i><img alt={'edit-button'} src={EditIcon}></img></i> <i><img alt={'delete-button'} src={DeleteIcon}></img></i></h1> </div> */}
       {Object.keys(props.educationLabel).map(label => {
         return(
           <div>
