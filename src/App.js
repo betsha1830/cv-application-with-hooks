@@ -43,7 +43,13 @@ function App() {
     setWorkInfo(workInfo.concat(data))
   }
 
-  
+  const deleteWorkInfo = (index) => {
+    setWorkInfo(workInfo.filter((info, pos) => {
+      if (pos !== index){
+        return info
+      }
+    }))
+  }
 
   return (
     <div className="App">
@@ -56,7 +62,7 @@ function App() {
 
       <Output type='personal-info' value={personalInfo} label={label.personal_info_label} />
       <Output type='education-info' value={educationInfo} deleteHandler={deleteEducationInfo} label={label.education_info_label} />
-      <Output type='work-info' value={workInfo} label={label.work_info_label} />
+      <Output type='work-info' value={workInfo} deleteHandler={deleteWorkInfo} label={label.work_info_label} />
       {/* <h1>{JSON.stringify(educationInfo)}</h1> 
       <h1>{JSON.stringify(personalInfo)}</h1>
       <h1>{JSON.stringify(workInfo)}</h1> */}
