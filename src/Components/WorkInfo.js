@@ -1,5 +1,4 @@
-import { clear } from "@testing-library/user-event/dist/clear";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 function WorkInfo (props) {
 
@@ -12,11 +11,19 @@ function WorkInfo (props) {
     })
   }
 
+  useEffect(() => {
+    if(props.pos !== -10){
+      setWorkInfo(props.workValue[props.pos])
+    }
+  }, [props.pos])
+
   const updateWorkField = (e) => {
-    setWorkInfo({...workInfo, [e.target.id]: e.target.value})
+    setWorkInfo({...workInfo,
+      [e.target.id]: e.target.value
+    })
   }
 
-  const addWork = () => {
+  const passWork = () => {
     props.workHandler(workInfo)
     clearField()
   }
@@ -30,7 +37,7 @@ function WorkInfo (props) {
         </div>
         )
       })}
-      <button onClick={addWork} className="add-work">Add</button>
+      <button onClick={passWork} id="add-work">Add</button>
     </div>
   )
 

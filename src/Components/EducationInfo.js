@@ -1,10 +1,14 @@
-import React, {useState} from 'react'
-import EditIcon from "../edit.png"
-import DeleteIcon from "../trash.png"
+import React, {useEffect, useState} from 'react'
 
 function EducationInfo(props) {
 
   const [educationInfo, setEducationInfo] = useState({})
+
+  useEffect(() => {
+    if(props.pos !== -10){
+      setEducationInfo(props.educationValue[props.pos])
+    }
+  }, [props.pos])
 
   function clearField() {
     Object.keys(props.educationLabel).forEach(id => {
@@ -13,15 +17,9 @@ function EducationInfo(props) {
     })
   }
 
-  function populateField() {
-    Object.keys(props.educationLabel).forEach(id => {
-      document.getElementById(id).value = props.educationValue[id]
-    })
-  }
-
   const passEducationInfo = () => {
-      props.educationHandler(educationInfo)
-      clearField()
+    props.educationHandler(educationInfo)
+    clearField()
   }
 
   const updateEducationInfo = (e) => {
@@ -32,7 +30,6 @@ function EducationInfo(props) {
 
   return (
     <div className='education-info'>
-      {/* <div><h1 className='heading'>Education Information <i><img alt={'edit-button'} src={EditIcon}></img></i> <i><img alt={'delete-button'} src={DeleteIcon}></img></i></h1> </div> */}
       {Object.keys(props.educationLabel).map(label => {
         return(
           <div>
@@ -40,7 +37,7 @@ function EducationInfo(props) {
           </div>
         )
       })}
-      <button id='add_education' onClick={passEducationInfo}>Add</button>
+      <button id='add-education' onClick={passEducationInfo}>Add</button>
       {/* <h1>{JSON.stringify(educationInfo)}</h1> */}
     </div>
   )

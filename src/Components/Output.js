@@ -8,6 +8,10 @@ function Output (props) {
     props.deleteHandler(index)
   }
 
+  const editInfo = (index) => {
+    props.editHandler(index)
+  }
+
   if(props.type !== 'personal-info'){
     return(
       <div className={props.type + '-output'}>
@@ -16,7 +20,7 @@ function Output (props) {
           return(
             <div> 
               <h1>{props.type.includes('work') ? 'Work Information '+ parseInt(index+1) : 'Education Information ' + parseInt(index+1)}
-              <img alt={'Edit button'} src={EditButton} onClick={''}></img>
+              <img alt={'Edit button'} src={EditButton} onClick={() => editInfo(index)}></img>
               <img alt={'Delete button'} src={DeleteButton} onClick={() => deleteInfo(index)}></img></h1> 
               {Object.keys(obj).map(item => {
                 return(
