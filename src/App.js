@@ -14,15 +14,15 @@ function App() {
   const [personalInfo, setPersonalInfo] = useState({})
   const [educationInfo, setEducationInfo] = useState([])
   const [workInfo, setWorkInfo] = useState([])
-  const [editEducationPos, setEditEducationPos] = useState(-10)
-  const [editWorkPos, setEditWorkPos] = useState(-10)
+  const [editEducationPos, setEditEducationPos] = useState(null) 
+  const [editWorkPos, setEditWorkPos] = useState(null)
 
   const addPesronalInfo = (data) => { 
     setPersonalInfo({...data})
   }
 
   const addEducationInfo = (data) => {
-    if(editEducationPos !== -10){
+    if(editEducationPos !== null){
       setEducationInfo(educationInfo.map((obj,index) => {
         if(index === editEducationPos){
           return data
@@ -30,13 +30,13 @@ function App() {
         return obj
       }))
       document.getElementById('add-education').innerText = 'Add'
-      setEditEducationPos(-10)
+      setEditEducationPos(null)
     }
     else setEducationInfo(educationInfo.concat(data))
   }
 
   const addWorkInfo = (data) => {
-    if(editWorkPos !== -10){
+    if(editWorkPos !== null){
       setWorkInfo(workInfo.map((obj,index) => {
         if(index === editWorkPos){
           return data
@@ -44,7 +44,7 @@ function App() {
         return obj
       }))
       document.getElementById('add-work').innerText = 'Add'
-      setEditWorkPos(-10)
+      setEditWorkPos(null)
     }
     else setWorkInfo(workInfo.concat(data))
   }

@@ -12,7 +12,7 @@ function WorkInfo (props) {
   }
 
   useEffect(() => {
-    if(props.pos !== -10){
+    if(props.pos !== null){
       setWorkInfo(props.workValue[props.pos])
     }
   }, [props.pos])

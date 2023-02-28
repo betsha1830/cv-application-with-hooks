@@ -5,7 +5,7 @@ function EducationInfo(props) {
   const [educationInfo, setEducationInfo] = useState({})
 
   useEffect(() => {
-    if(props.pos !== -10){
+    if(props.pos !== null){
       setEducationInfo(props.educationValue[props.pos])
     }
   }, [props.pos])
