@@ -1,3 +1,7 @@
+body {
+  background-color: rgba(243, 236, 218, 1);
+}
+
 .App {
   align-items: center;
 }
@@ -34,10 +38,41 @@ input {
   font-size: 1.2em;
 }
 
-label {
+.label {
   font-family: 'Mulish', sans-serif;
+  margin-bottom: 1em;
+}
+
+button {
+  background-color: #ffff;
+  width: 6em;
+  height: 3em;
+  border: solid 1px black;
+  color: rgba(233, 191, 85, 1);
+  font-family: 'Mulish', sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 2em 0;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+img:hover {
+  cursor: pointer;
 }
 
 h1, h2 {
   font-family: 'Tienne', serif;
+}
+
+.label-field {
+  margin: 1em 0 0 0;
+}
+
+.output {
+  margin: 0.8em 0 0 0;
 }

@@ -42,7 +42,7 @@ function Output (props) {
       <h2>Personal Information</h2>
       {Object.keys(props.label).map(item => {
         return(
-        <div> 
+        <div className="output"> 
           <label>{props.label[item]}: </label> <span>{props.value[item]}</span>
         </div>
         )

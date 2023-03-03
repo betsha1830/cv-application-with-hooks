@@ -34,10 +34,11 @@ function PersonalInfo (props) {
 
   return(
     <div className="personal-info">
+      <h2>Personal Field</h2>
       {Object.keys(props.personalLabel).map(key => {
         return(
-          <div>
-            <label>{props.personalLabel[key]}:</label><br></br><input onChange={updatePersonalInfo} type={'text'} id={key}></input>
+          <div className="label-field">
+            <label className='label'>{props.personalLabel[key]}:</label><br></br><input onChange={updatePersonalInfo} type={'text'} id={key}></input>
           </div>
         )
       })}
