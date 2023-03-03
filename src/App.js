@@ -87,13 +87,25 @@ function App() {
 
   return (
     <div className="App">
-      <PersonalInfo personalLabel={label.personal_info_label} personalValue={personalInfo} passSetPersonalInfo={setPersonalInfo} personalHandler={addPesronalInfo}/>
-      <EducationInfo educationLabel={label.education_info_label} educationValue={educationInfo} educationHandler={addEducationInfo} pos={editEducationPos}/>
-      <WorkInfo workLabel={label.work_info_label} workValue={workInfo} workHandler={addWorkInfo} pos={editWorkPos}/>
-
-      <Output type='personal-info' value={personalInfo} label={label.personal_info_label} />
-      <Output type='education-info' value={educationInfo} editHandler={editEducationInfo} deleteHandler={deleteEducationInfo} label={label.education_info_label} />
-      <Output type='work-info' value={workInfo} editHandler={editWorkInfo} deleteHandler={deleteWorkInfo} label={label.work_info_label} />
+      <h1 className='title'>C.V. Maker</h1>
+      <div className='container'>
+        <div className='left-side'>
+          <h1 className='instruction-heading'>Instructions</h1>
+          <span className='instruction-detail'>Pretty simple. Fill out this simple form and when you’re done, just click on 'generate file' to generate your own CV. <br></br><br></br>
+          If you want to edit or remove any of your entry you can do so in the Entry section.</span>
+          <h1 className='entries-heading'>Entries</h1>
+          <Output type='personal-info' value={personalInfo} label={label.personal_info_label} />
+          <Output type='education-info' value={educationInfo} editHandler={editEducationInfo} deleteHandler={deleteEducationInfo} label={label.education_info_label} />
+          <Output type='work-info' value={workInfo} editHandler={editWorkInfo} deleteHandler={deleteWorkInfo} label={label.work_info_label} />
+        </div>
+        <div className='right-side'>
+          <h1>Input Field</h1>
+          <PersonalInfo personalLabel={label.personal_info_label} personalValue={personalInfo} passSetPersonalInfo={setPersonalInfo} personalHandler={addPesronalInfo}/>
+          <EducationInfo educationLabel={label.education_info_label} educationValue={educationInfo} educationHandler={addEducationInfo} pos={editEducationPos}/>
+          <WorkInfo workLabel={label.work_info_label} workValue={workInfo} workHandler={addWorkInfo} pos={editWorkPos}/>
+        </div>
+      </div>
+     
     </div>
   );
 }

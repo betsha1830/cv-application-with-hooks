@@ -33,7 +33,7 @@ function EducationInfo(props) {
       {Object.keys(props.educationLabel).map(label => {
         return(
           <div>
-            <label>{props.educationLabel[label]}: </label> <input onChange={updateEducationInfo} type={(props.educationLabel[label]).includes('Date') ? 'date': 'text'} id={label}></input>
+            <label>{props.educationLabel[label]}: </label> <br></br><input onChange={updateEducationInfo} type={(props.educationLabel[label]).includes('Date') ? 'date': 'text'} id={label}></input>
           </div>
         )
       })}

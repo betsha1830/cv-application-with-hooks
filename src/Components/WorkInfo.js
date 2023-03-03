@@ -33,7 +33,7 @@ function WorkInfo (props) {
       {Object.keys(props.workLabel).map(label => {
         return(
         <div>
-          <label>{props.workLabel[label]}: </label> <input onChange={updateWorkField} id={label} type={(props.workLabel[label]).includes('Date') ? 'date' : 'text'}></input>
+          <label>{props.workLabel[label]}: </label> <br></br><input onChange={updateWorkField} id={label} type={(props.workLabel[label]).includes('Date') ? 'date' : 'text'}></input>
         </div>
         )
       })}

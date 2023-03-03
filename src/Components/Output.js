@@ -19,19 +19,18 @@ function Output (props) {
         {props.value.map((obj, index) => {
           return(
             <div> 
-              <h1>{props.type.includes('work') ? 'Work Information '+ parseInt(index+1) : 'Education Information ' + parseInt(index+1)}
+              <h2>{props.type.includes('work') ? 'Work Information '+ parseInt(index+1) : 'Education Information ' + parseInt(index+1)}
               <img alt={'Edit button'} src={EditButton} onClick={() => editInfo(index)}></img>
-              <img alt={'Delete button'} src={DeleteButton} onClick={() => deleteInfo(index)}></img></h1> 
+              <img alt={'Delete button'} src={DeleteButton} onClick={() => deleteInfo(index)}></img></h2> 
               {Object.keys(obj).map(item => {
                 return(
                   <div>
                     <label>{props.label[item]}: </label> <span>{obj[item]}</span>
                   </div>
-                )
-              }) 
+                  )
+                })
               }
             </div>
-          
         )})}
         </div>
       </div>
@@ -40,8 +39,8 @@ function Output (props) {
 
   return(
     <div className={props.type +  '-output'}>
-      <h1>Personal Information</h1>
-      {Object.keys(props.value).map(item => {
+      <h2>Personal Information</h2>
+      {Object.keys(props.label).map(item => {
         return(
         <div> 
           <label>{props.label[item]}: </label> <span>{props.value[item]}</span>

@@ -30,7 +30,6 @@ function PersonalInfo (props) {
   
   const updatePersonalInfo = (e) => {
     setPersonal({...personal, [e.target.id]: e.target.value})
-    console.log(personal)
   }
 
   return(
@@ -38,7 +37,7 @@ function PersonalInfo (props) {
       {Object.keys(props.personalLabel).map(key => {
         return(
           <div>
-            <label>{props.personalLabel[key]}:</label><input onChange={updatePersonalInfo} type={'text'} id={key}></input>
+            <label>{props.personalLabel[key]}:</label><br></br><input onChange={updatePersonalInfo} type={'text'} id={key}></input>
           </div>
         )
       })}
