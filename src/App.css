@@ -76,3 +76,14 @@ h1, h2 {
 .output {
   margin: 0.8em 0 0 0;
 }
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 70px;
+  flex-wrap: wrap;
+}

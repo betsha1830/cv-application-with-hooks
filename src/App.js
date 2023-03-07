@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import EducationInfo from './Components/EducationInfo';
+import Footer from './Components/Footer';
 import Output from './Components/Output';
 import PersonalInfo from './Components/PersonalInfo';
 import WorkInfo from './Components/WorkInfo';
@@ -105,7 +106,7 @@ function App() {
           <WorkInfo workLabel={label.work_info_label} workValue={workInfo} workHandler={addWorkInfo} pos={editWorkPos}/>
         </div>
       </div>
-     
+      <Footer />
     </div>
   );
 }
